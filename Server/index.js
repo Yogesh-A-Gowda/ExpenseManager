@@ -11,7 +11,21 @@ import router from './routes/index.js'
 dotenv.config()
 const app = express();
 const PORT = process.env.PORT || 8000
-app.use(cors('https://expense-manager-3vir.vercel.app/'))
+
+const allowedOrigins = 'https://expense-manager-3vir.vercel.app/'
+
+// CORS middleware
+app.use(cors({
+  origin: function (origin, callback) {
+    // Allow requests with no origin (e.g., mobile apps or Postman)
+    if (!origin || allowedOrigins.indexOf(origin) !== -1) {
+      callback(null, true); // Allow the request
+    } else {
+      callback(new Error('Not allowed by CORS')); // Deny the request
+    }
+  },}))
+
+
 app.use(express.json({limit:'10mb'}))
 app.use(express.urlencoded({extended:true}))
 
