@@ -11,7 +11,7 @@ import router from './routes/index.js'
 dotenv.config()
 const app = express();
 const PORT = process.env.PORT || 8000
-app.use(cors('*'))
+app.use(cors('https://expense-manager-3vir.vercel.app/'))
 app.use(express.json({limit:'10mb'}))
 app.use(express.urlencoded({extended:true}))
 
