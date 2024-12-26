@@ -15,7 +15,7 @@ const PORT = process.env.PORT || 8000
 const allowedOrigins = 'https://expense-manager-3vir.vercel.app'
 
 // CORS middleware
-app.use(cors('*'));
+app.use(cors());
 
 
 app.use(express.json({limit:'10mb'}))
