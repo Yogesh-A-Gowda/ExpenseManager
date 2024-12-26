@@ -23,6 +23,7 @@ app.use(
                 callback(new Error('Not allowed by CORS'));
             }
         },
+         ssl: { rejectUnauthorized: false },
         methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
         credentials: true, // Allow cookies or Authorization headers
     })
