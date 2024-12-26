@@ -12,7 +12,7 @@ dotenv.config()
 const app = express();
 const PORT = process.env.PORT || 8000
 
-const allowedOrigins = 'https://expense-manager-3vir.vercel.app/'
+const allowedOrigins = 'https://expense-manager-3vir.vercel.app'
 
 // CORS middleware
 app.use(cors({
